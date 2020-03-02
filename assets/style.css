@@ -1,0 +1,472 @@
+@font-face {
+  font-family: "Polsku";
+  src: url("fonts/Polsku.woff") format("woff"),
+     url("fonts/Polsku.ttf") format("truetype");
+}
+
+body {
+  background: black;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-smooth: never;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+  font-family: "Polsku";
+  color: white;
+  overflow: hidden;
+}
+
+body.firefox {
+  background: blue;
+}
+
+body.loaded {
+  overflow: auto;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+nav a:hover {
+  transform: scaleY(2);
+}
+
+.zoomer a:hover {
+  text-decoration: underline;
+}
+
+.zoomers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 10;
+  /*animation: hueRotate 10s infinite linear;*/
+}
+
+.firefox .zoomers {
+  position: relative;
+  overflow: visible;
+}
+
+.zoomer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0c00ff;
+  text-align: center;
+  line-height: 100vh;
+  -webkit-backface-visibility: hidden;
+  font-size: 42px;
+  will-change: transform;
+  transform: translateZ(0) scale3d(1,1,1);
+}
+
+.firefox .zoomer {
+  position: relative;
+  min-height: 100vh;
+}
+
+.zoomer iframe,
+.zoomer img,
+.zoomer .play-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+}
+
+.zoomer .play-video {
+  pointer-events: none;
+  width: 560px;
+  height: 420px;
+  background: #eee;
+  z-index: 10;
+  background: url(./images/play2.gif);
+  background-size: 100% 100%;
+}
+
+
+.skip-left {
+  width: 25%;
+  text-align: center;
+  font-size: 10vh;
+  position: absolute;
+  left: 0;
+  font-family: auto;
+  cursor: pointer;
+  user-select: none;
+}
+
+.skip-right {
+  width: 25%;
+  text-align: center;
+  font-size: 10vh;
+  position: absolute;
+  right: 0;
+  font-family: auto;
+  cursor: pointer;
+  user-select: none;
+}
+
+.zoomer.intro {
+  background: none;
+}
+
+.zoomer.start {
+  color: white;
+}
+
+.color-shift {
+  will-change: transform;
+}
+
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.zoomer.video {
+  overflow: hidden;
+  background: none;
+}
+
+.zoomer.tour-dates {
+  background: none;
+  color: white;
+}
+
+.tour-dates a {
+  text-decoration: underline;
+}
+h1 {
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+h1 a {
+  text-decoration: none;
+}
+.zoomer p {
+  font-family: 'IBM Plex Mono', Courier, monospace;
+  line-height: 1.5em;
+  font-size: 14px;
+}
+
+.zoomer svg, .loading svg {
+  height: auto;
+  width: 80vw;
+  max-width: 500px;
+}
+
+.zoomer.about {
+  color: white;
+  background: none;
+}
+
+.zoomer.about p {
+  position: absolute;
+  width: 380px;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+  text-align: center;
+}
+
+.zoomer .tour-block {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+  text-align: center;
+  width: 90vw;
+  height: 85vh;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  display: flex;
+  z-index: 150;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  font-size: 42px;
+  cursor: pointer;
+}
+
+.loading span {
+  margin: auto;
+  cursor: pointer;
+}
+
+.loaded .loading {
+  display: none;
+}
+
+.tour-dates {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.tour-dates p {
+  margin: 20px 2%;
+  flex-basis: 2%;
+}
+
+.zoomer * {
+  will-change: transform;
+}
+
+.zoomer.tour {
+  background: none;
+}
+
+.zoomer.space {
+  background: none;
+}
+
+.zoomer.end {
+  background: none;
+  color: white;
+}
+#about {
+  border-radius: 100%;
+}
+
+#contact {
+  border-radius: 100%;
+}
+
+.contact-links {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translate3d(0,-50%,0);
+  
+}
+
+.contact-links h1 {
+  letter-spacing: 0.04em;
+}
+
+.contact-links p {
+  margin-top: 15vh;
+}
+
+
+
+.credit {
+  position: absolute;
+  width: 100%;
+  bottom: 33%;
+}
+
+#scroller {
+  position: relative;
+  z-index: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  pointer-events: none;
+  text-transform: uppercase;
+  line-height: 1em;
+  font-size: 20px;
+}
+
+.marker {
+  position: absolute;
+  text-transform: uppercase;
+  line-height: 1em;
+  font-size: 20px;
+  box-sizing: border-box;
+  padding: 15px;
+  top: 33px;
+  left: 33px;
+  background: blue;
+  border-radius: 100%;
+  color: transparent;
+  /*text-shadow: 10px 0 0 white;*/
+  background: transparent;
+  border: 2px solid white;
+}
+
+#tour .marker {
+  left: auto;
+  right: 33px;
+}
+
+#about .marker {
+  top: auto;
+  bottom: 33px;
+  left: 33px;
+}
+
+#contact .marker {
+  top: auto;
+  left: auto;
+  right: 33px;
+  bottom: 33px;
+}
+
+nav a {
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+nav ul {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li,
+.nav-link {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: left;
+  /*mix-blend-mode: exclusion;*/
+  z-index: 100;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  mix-blend-mode: normal;
+}
+
+nav li {
+  position: absolute;
+}
+
+nav li:nth-child(1),
+.nav-link:nth-child(1) {
+  top: 50px;
+  left: 50px;
+}
+
+nav li:nth-child(2),
+.nav-link:nth-child(2) {
+  top: 50px;
+  right: 50px;
+}
+
+nav li:nth-child(3),
+.nav-link:nth-child(3) {
+  right: 50px;
+  bottom: 50px;
+}
+
+nav li:nth-child(4),
+.nav-link:nth-child(4) {
+  bottom: 50px;
+  left: 50px;
+}
+
+
+@media screen and (max-width: 767px) {
+
+  nav {
+    font-size: 16px;
+  }
+  
+  nav li:nth-child(1),
+  .nav-link:nth-child(1) {
+    top: 20px;
+    left: 20px;
+  }
+
+  nav li:nth-child(2),
+  .nav-link:nth-child(2) {
+    top: 20px;
+    right: 20px;
+  }
+
+  nav li:nth-child(3),
+  .nav-link:nth-child(3) {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  nav li:nth-child(4),
+  .nav-link:nth-child(4) {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .marker {
+    font-size: 16px;
+    top: 4px;
+    left: 4px;
+  }
+
+  #tour .marker {
+    left: auto;
+    right: 4px;
+  }
+
+  #about .marker {
+    top: auto;
+    bottom: 4px;
+    left: 4px;
+  }
+
+  #contact .marker {
+    top: auto;
+    left: auto;
+    right: 4px;
+    bottom: 4px;
+  }
+
+  .contact-links p {
+    margin-top: 25vh;
+  }
+
+  .zoomer p {
+    box-sizing: border-box;
+    font-size: 12px;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  .zoomer iframe,
+  .zoomer img,
+  .zoomer .play-video {
+    width: 300px;
+    height: 225px;
+  }
+}
