@@ -131,7 +131,10 @@ function animate() {
     scrollBy(0,2);
 
   if(scrollDiff > zoomers.length - 1.01)
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 2)
+
+  if(scrollDiff === 1)
+    window.scrollTo(0, scroller.offsetHeight - window.innerHeight*2)
 
 }
 
@@ -176,7 +179,6 @@ function initYoutube() {
     player = new YT.Player('player', {
       height: '420',
       width: '560',
-      videoId: 'yPKi6q9D_PM',
       playsinline: '1',
       events: {
         'onReady': onPlayerReady,
@@ -202,7 +204,11 @@ function initYoutube() {
 
     // 4. The API will call this function when the video player is ready.
     function onPlayerReady(event) {
-      player.cuePlaylist(videos)
+      // player.cuePlaylist(videos)
+      player.cuePlaylist({
+        listType: 'list',
+        list: 'PLyQkFCKD8oGEt8isNZJKsKGBV9lZbswRD' 
+      })
       player.setLoop(true)
     }
 
