@@ -133,7 +133,7 @@ function animate() {
   if(scrollDiff > zoomers.length - 1.01)
     window.scrollTo(0, 2)
 
-  if(scrollDiff === 1)
+  if(scrollDiff <= 1.01)
     window.scrollTo(0, scroller.offsetHeight - window.innerHeight*2)
 
 }
