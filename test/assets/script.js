@@ -43,15 +43,15 @@ function animate() {
       zoomers[i].style.opacity = 1;
       zoomers[i].style.pointerEvents = 'auto';
     }
-    zoomers[i].style.transform = 'translateZ(0px) scale(' + zoomer.toFixed(4) + ')';
+    zoomers[i].style.transform = 'translateZ(0px) scale3d(' + zoomer.toFixed(4) + ',' + zoomer.toFixed(4) + ','+ zoomer.toFixed(4) +' )';
 
   }
 
-  if(scrollDiff > zoomers.length - 1.01)
-    window.scrollTo(0, 2)
+  if(scrollDiff > zoomers.length - 1.02)
+    window.scrollTo(0, (window.innerHeight*2))
 
-  if(scrollDiff <= 1.01)
-    window.scrollTo(0, scroller.offsetHeight - window.innerHeight*2)
+  if(scrollDiff <= 1.98)
+    window.scrollTo(0, scroller.offsetHeight - window.innerHeight*2.08)
 
 }
 
