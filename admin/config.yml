@@ -29,4 +29,4 @@ collections:
             widget: list
             fields:
               - {label: Label, name: label, widget: string}
-              - {label: Path, name: path, widget: string}
+              - {label: Path, name: id, hint: "ID for page to open when clicked", widget: string}
