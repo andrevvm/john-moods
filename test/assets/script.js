@@ -1,14 +1,18 @@
 var zoomers = document.querySelectorAll('.zoomer');
 var scroller = document.getElementById('scroller');
+
+var animate_bool = true;
+var resizeTimer = null;
+
 init();
 
 function setScrollerHeight() {
-  scroller.style.height = zoomers.length * (window.innerHeight * 1.5) + 'px';
+  scroller.style.height = (zoomers.length-1) * (window.innerHeight * 2) + 'px';
 }
 
 function init() {
   setScrollerHeight();
-  setTimeout(animate, 1000);
+  setTimeout(animate, 100);
 
   for(var i=0; i<zoomers.length; i++) {
     zoomers[i].style.zIndex = zoomers.length - i;
@@ -17,24 +21,67 @@ function init() {
 }
 
 function animate() {
-  window.requestAnimationFrame(animate);
+
+  if(animate_bool) {
+    window.requestAnimationFrame(animate);
+  } else {
+    return false;
+  }
+
   var scrollY = window.scrollY;
 
-  var scrollDiff = (scrollY + window.innerHeight) / (window.innerHeight);
+  var scrollDiff = (scrollY + window.innerHeight*2) / (window.innerHeight*2);
 
   for(var i=0; i<zoomers.length; i++) {
 
-    var zoomAmt = (1 * (i + 1)) - scrollDiff;
-    var zoomer = Math.min(500, Math.max(0, Math.pow(500, zoomAmt) * (i + 1)) );
-    zoomers[i].style.transform = 'translateZ(0px) scale(' + zoomer + ')';
+    var zoomAmt = (i + 1) - scrollDiff;
+    var zoomer = Math.min(600, Math.max(0, Math.pow(1000, zoomAmt)) );
+    if(zoomer < 0.001) {
+      zoomers[i].style.opacity = 0;
+      zoomers[i].style.pointerEvents = 'none';
+    } else {
+      zoomers[i].style.opacity = 1;
+      zoomers[i].style.pointerEvents = 'auto';
+    }
+    zoomers[i].style.transform = 'translateZ(0px) scale(' + zoomer.toFixed(4) + ')';
 
   }
 
-  if(scrollDiff > 4.2)
-    window.scrollTo(0,0)
+  if(scrollDiff > zoomers.length - 1.01)
+    window.scrollTo(0, 2)
+
+  if(scrollDiff <= 1.01)
+    window.scrollTo(0, scroller.offsetHeight - window.innerHeight*2)
 
 }
 
+window.addEventListener('resize', function() {
+
+  for(var i=0; i<zoomers.length; i++) {
+
+    zoomers[i].style.transform = '';
+
+  }
+
+  clearTimeout(resizeTimer);
+  animate_bool = false;
+
+  resizeTimer = setTimeout(function() {
+    animate_bool = true;
+    animate();
+  }, 1000);
+
+})
+
 function openContent() {
   document.body.classList.add('open-content');
+  var el = document.getElementById(this.dataset.id);
+
+  el.classList.add('open');
+  el.addEventListener('click', closeContent);
+}
+
+function closeContent() {
+  this.classList.remove('open');
+  document.body.classList.remove('open-content');
 }

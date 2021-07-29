@@ -4,6 +4,10 @@
      url("fonts/Polsku.ttf") format("truetype");
 }
 
+html {
+  font-size: 1vw;
+}
+
 body {
   height: 100vh;
   width: 100%;
@@ -43,7 +47,7 @@ body {
   text-align: center;
   line-height: 100vh;
   -webkit-backface-visibility: hidden;
-  font-size: 4vw;
+  font-size: 4rem;
   will-change: transform;
   transform: translateZ(0) scale3d(1,1,1);
 
@@ -75,7 +79,7 @@ body {
   text-align: center;
   
   -webkit-backface-visibility: hidden;
-  font-size: 2vw;
+  font-size: 2rem;
   line-height: 1.2em;
   display: flex;
   flex-direction: column;
@@ -99,7 +103,8 @@ body {
   margin:  auto;
 }
 
-.open-content .content {
+.open-content .content.open {
   transform:  translateZ(0px) scale(1);
+  z-index: 95;
 }
 
