@@ -45,13 +45,17 @@ body {
   bottom: 0;
   background: blue;
   text-align: center;
-  line-height: 100vh;
+  display: flex;
   -webkit-backface-visibility: hidden;
   font-size: 4rem;
   will-change: transform;
   transform: translateZ(0) scale3d(1,1,1);
 
   cursor: pointer;
+}
+
+.zoomer span {
+  margin:  auto;
 }
 
 .zoomer:nth-child(2) {
