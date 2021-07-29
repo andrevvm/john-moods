@@ -12,6 +12,10 @@ function setScrollerHeight() {
 
 function init() {
   setScrollerHeight();
+
+  var s = (window.innerHeight*2) * 1;
+  window.scrollTo(0,s);
+
   setTimeout(animate, 100);
 
   for(var i=0; i<zoomers.length; i++) {
