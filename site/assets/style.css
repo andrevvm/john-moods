@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "Polsku";
+  src: url("fonts/Polsku.woff") format("woff"),
+     url("fonts/Polsku.ttf") format("truetype");
+}
+
+html {
+  font-size: 1vw;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-smooth: never;
+  -webkit-font-smoothing : subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  text-rendering: optimizeSpeed;
+  font-family: "Polsku";
+  color: white;
+}
+
+.zoomers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 100;
+  transition:  transform 0.5s ease;
+  transform:  translateZ(0px) scale(1);
+}
+
+.open-content .zoomers {
+  transform:  translateZ(0px) scale(0);
+}
+
+.zoomer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: blue;
+  text-align: center;
+  display: flex;
+  -webkit-backface-visibility: hidden;
+  font-size: 4rem;
+  will-change: transform;
+  transform: translateZ(0) scale3d(1,1,1);
+
+  cursor: pointer;
+}
+
+.zoomer * {
+  will-change: transform;
+}
+
+.zoomer span {
+  margin:  auto;
+}
+
+.zoomer:nth-child(2) {
+  background: red;
+}
+
+.zoomer:nth-child(3) {
+  background: green;
+}
+
+#scroller {
+  position: relative;
+}
+
+.content {
+  position: fixed;
+  top:  0;
+  left:  0;
+  right:  0;
+  bottom:  0;
+  z-index: 90;
+  transition:  transform 0.5s ease;
+  background:  black;
+
+  text-align: center;
+  
+  -webkit-backface-visibility: hidden;
+  font-size: 2rem;
+  line-height: 1.2em;
+  display: flex;
+  flex-direction: column;
+
+  transform: translateZ(0px) scale(50);
+  will-change: transform;
+
+  cursor: zoom-out;
+
+  overflow-y:  auto;
+}
+
+.content iframe {
+  margin:  10vh auto;
+  width:  80vw;
+  height: 45vw;
+}
+
+.content p {
+  width: 80vw;
+  margin:  auto;
+}
+
+.open-content .content.open {
+  transform:  translateZ(0px) scale(1);
+  z-index: 95;
+}
+
+@media (max-width: 760px) {
+  html {
+    font-size:  1.75vw;
+  }
+}
