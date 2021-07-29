@@ -1,7 +1,16 @@
 nav_items:
   - label: Tour
     path: tour
+    id: tour
+    bg: "#5898ff"
+    text: "#ffffff"
   - label: Videos
     path: videos
+    id: videos
+    bg: "#ff4646"
+    text: "#ffffff"
   - label: About
     path: about
+    id: about
+    bg: "#d155ff"
+    text: "#ffffff"
