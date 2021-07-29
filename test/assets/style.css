@@ -54,6 +54,10 @@ body {
   cursor: pointer;
 }
 
+.zoomer * {
+  will-change: transform;
+}
+
 .zoomer span {
   margin:  auto;
 }

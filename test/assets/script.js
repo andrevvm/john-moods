@@ -22,11 +22,7 @@ function init() {
 
 function animate() {
 
-  if(animate_bool) {
-    window.requestAnimationFrame(animate);
-  } else {
-    return false;
-  }
+  window.requestAnimationFrame(animate);
 
   var scrollY = window.scrollY;
 
@@ -35,7 +31,7 @@ function animate() {
   for(var i=0; i<zoomers.length; i++) {
 
     var zoomAmt = (i + 1) - scrollDiff;
-    var zoomer = Math.min(600, Math.max(0, Math.pow(1000, zoomAmt)) );
+    var zoomer = Math.min(900, Math.max(0, Math.pow(1000, zoomAmt)) );
     if(zoomer < 0.001) {
       zoomers[i].style.opacity = 0;
       zoomers[i].style.pointerEvents = 'none';
@@ -57,19 +53,7 @@ function animate() {
 
 window.addEventListener('resize', function() {
 
-  for(var i=0; i<zoomers.length; i++) {
-
-    zoomers[i].style.transform = '';
-
-  }
-
-  clearTimeout(resizeTimer);
-  animate_bool = false;
-
-  resizeTimer = setTimeout(function() {
-    animate_bool = true;
-    animate();
-  }, 1000);
+  setScrollerHeight();
 
 })
 
