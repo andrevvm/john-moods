@@ -20,7 +20,7 @@ collections:
   - name: settings
     label: Settings
     files:
-      - file: site/data/settings/navigation.yml
+      - file: site/_data/navigation.yml
         label: Navigation
         name: navigation
         fields:
