@@ -116,3 +116,8 @@ body {
   z-index: 95;
 }
 
+@media (max-width: 760px) {
+  html {
+    font-size:  1.75vw;
+  }
+}
