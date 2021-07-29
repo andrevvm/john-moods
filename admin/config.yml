@@ -17,3 +17,16 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: settings
+    label: Settings
+    files:
+      - file: site/data/settings/navigation.yml
+        label: Navigation
+        name: navigation
+        fields:
+          - label: Navigation
+            name: nav_items
+            widget: list
+            fields:
+              - {label: Label, name: label, widget: string}
+              - {label: Path, name: path, widget: string}
