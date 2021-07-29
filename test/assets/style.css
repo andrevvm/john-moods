@@ -94,6 +94,11 @@ body {
   height: 45vw;
 }
 
+.content p {
+  width: 80vw;
+  margin:  auto;
+}
+
 .open-content .content {
   transform:  translateZ(0px) scale(1);
 }
