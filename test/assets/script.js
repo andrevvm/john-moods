@@ -16,7 +16,9 @@ function init() {
   var s = (window.innerHeight*2) * 1;
   window.scrollTo(0,s);
 
-  setTimeout(animate, 100);
+  document.fonts.ready.then(function () {
+    animate();
+  });
 
   for(var i=0; i<zoomers.length; i++) {
     zoomers[i].style.zIndex = zoomers.length - i;
