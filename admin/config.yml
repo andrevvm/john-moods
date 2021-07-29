@@ -1,7 +1,7 @@
 backend:
   name: github
-  repo: john-moods/andrevvm.github.io
-  branch: master
+  repo: andrevvm/john-moods
+  branch: live
   site_domain: stoic-kalam-384ed4.netlify.com
 
 media_folder: "images/uploads"
