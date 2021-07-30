@@ -25,11 +25,14 @@ collections:
         label: Navigation
         name: navigation
         fields:
+          - label: Intro background
+            name: intro_bg
+            widget: color
           - label: Navigation
             name: nav_items
             widget: list
             fields:
               - {label: Label, name: label, widget: string}
               - {label: Path, name: id, hint: "ID for page to open when clicked", widget: string}
-              - { label: 'Background', name: 'bg', widget: 'color' }
-              - { label: 'Text', name: 'text', widget: 'color' }
+              - { label: 'Background', name: 'bg', widget: color }
+              - { label: 'Text', name: 'text', widget: color }
