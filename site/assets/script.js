@@ -1,5 +1,6 @@
 var zoomers = document.querySelectorAll('.zoomer');
 var scroller = document.getElementById('scroller');
+var tourDates = document.getElementById('tour-dates');
 
 var animate_bool = true;
 var resizeTimer = null;
@@ -22,6 +23,8 @@ function init() {
     zoomers[i].style.zIndex = zoomers.length - i;
     zoomers[i].addEventListener('click', openContent);
   }
+
+  initTour();
 }
 
 function animate() {
@@ -79,6 +82,59 @@ function openContent() {
 }
 
 function closeContent() {
-  this.classList.remove('open');
   document.body.classList.remove('open-content');
+  this.addEventListener('transitionend', contentClosed);
+}
+
+function contentClosed() {
+  this.classList.remove('open');
+  this.removeEventListener('transitionend', contentClosed);
+}
+
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.responseType = 'json';
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.response);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+}
+
+function initTour() {
+  httpGetAsync('https://api.songkick.com/api/3.0/artists/9417964-john-moods/calendar.json?apikey=kC1UkCrm3DDG7TfQ', response)
+}
+
+function response(data) {
+
+  if(!tourDates)
+    return false;
+  
+  var events = data.resultsPage.results.event;
+
+  if(events.length === 0)
+    return
+
+  tourDates.innerHTML = '';
+
+  for(var i=0;i<events.length;i++) {
+
+    var date = Date.parse(events[i].start.date)
+    var dateOptions = {month:'long', day: '2-digit', year: 'numeric'}
+    var dateString = new Date(date).toLocaleDateString(undefined, dateOptions)
+
+    var html =  dateString;
+    html +=     '<br/>'
+    html +=     events[i].venue.displayName
+    html +=     ', '
+    html +=     events[i].location.city
+    html +=     '<br/><a href="'+events[i].uri+'" target="_blank">Get tickets</a>'
+
+    var tourItem = document.createElement('p')
+    tourItem.innerHTML = html
+    tourDates.append(tourItem)
+
+  }
 }

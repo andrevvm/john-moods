@@ -17,7 +17,7 @@ body {
   -webkit-font-smoothing : subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
   text-rendering: optimizeSpeed;
-  font-family: "Polsku";
+  font-family: "Polsku", Helvetica, Arial, sans-serif;
   color: white;
 }
 
@@ -117,11 +117,24 @@ body.open-content {
 .content p {
   width: 80vw;
   margin:  auto;
+  font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
 }
 
 .open-content .content.open {
   transform:  translateZ(0px) scale(1);
+}
+
+.content.open {
   z-index: 95;
+}
+
+#tour-dates {
+  margin: auto;
+  padding:  10vh 0;
+}
+
+#tour-dates p {
+  margin:  1em;
 }
 
 @media (max-width: 760px) {

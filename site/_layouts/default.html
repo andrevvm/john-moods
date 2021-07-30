@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="assets/style.css" media="all">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/ScrollToPlugin.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="zoomers">
@@ -36,6 +40,11 @@
       <div id="scroller">
       <span></span>
     </div>
+    <div class="content tour-dates" id="Tour">
+      <div id="tour-dates">
+        <p>No upcoming tour dates</p>
+      </div>
+    </div>
     <div class="content" id="Videos">
       <div class="videos">
 
@@ -43,7 +52,7 @@
 
       </div>
     </div>
-    <div class="content" id="About">
+    <div class="content" id="About" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: 'site/', '' }})">
       {{ site.data.about.text | markdownify }}
     </div>
     <script src="assets/script.js"></script>
