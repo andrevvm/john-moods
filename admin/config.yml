@@ -20,7 +20,7 @@ collections:
             widget: markdown
       - file: site/_data/videos.yml
         label: Videos
-        name: about
+        name: videos
         fields:
           - label: Embeds
             name: embeds
