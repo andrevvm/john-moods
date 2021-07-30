@@ -56,7 +56,6 @@ body {
 
 .zoomer span:hover {
   color: white;
-  mix-blend-mode: difference;
 }
 
 .zoomer * {

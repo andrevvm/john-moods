@@ -9,7 +9,7 @@ media_folder: "site/images/uploads"
 collections:
   - name: settings
     label: Content
-    create: true
+    create: false
     files:
       - file: site/_data/about.yml
         label: About
@@ -17,6 +17,13 @@ collections:
         fields:
           - label: Text
             name: text
+            widget: markdown
+      - file: site/_data/videos.yml
+        label: Videos
+        name: about
+        fields:
+          - label: Embeds
+            name: embeds
             widget: markdown
       - file: site/_data/navigation.yml
         label: Navigation
