@@ -38,6 +38,9 @@ collections:
           - label: Intro background
             name: intro_bg
             widget: color
+          - label: Intro text
+            name: intro_text
+            widget: color
           - label: Navigation
             name: nav_items
             widget: list

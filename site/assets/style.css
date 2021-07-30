@@ -23,6 +23,7 @@ body {
   text-rendering: optimizeSpeed;
   font-family: "Polsku", Helvetica, Arial, sans-serif;
   color: white;
+  background: black;
 }
 
 body.open-content {
@@ -37,12 +38,13 @@ body.open-content {
   bottom: 0;
   overflow: hidden;
   z-index: 100;
-  transition:  transform 0.5s ease;
+  transition:  transform 1s ease;
   transform:  translateZ(0px) scale(1);
 }
 
 .open-content .zoomers {
-  transform:  translateZ(0px) scale(0);
+  transform:  translateZ(0px) scale(0) rotate(360deg);
+  transform-origin: 60% 20%;
 }
 
 .zoomer {
@@ -93,8 +95,9 @@ body.open-content {
   right:  0;
   bottom:  0;
   z-index: 90;
-  transition:  transform 0.5s ease;
+  transition:  opacity 0.5s ease;
   background:  black;
+  opacity: 0;
 
   text-align: center;
   
@@ -104,7 +107,7 @@ body.open-content {
   display: flex;
   flex-direction: column;
 
-  transform: translateZ(0px) scale(50);
+  transform: translateZ(0px) scale(1);
   will-change: transform;
 
   cursor: zoom-out;
@@ -127,6 +130,7 @@ body.open-content {
 
 .open-content .content.open {
   transform:  translateZ(0px) scale(1);
+  opacity: 1;
 }
 
 .content.open {
