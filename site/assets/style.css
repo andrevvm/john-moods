@@ -21,6 +21,10 @@ body {
   color: white;
 }
 
+body.open-content {
+  overflow: hidden;
+}
+
 .zoomers {
   position: fixed;
   top: 0;

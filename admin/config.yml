@@ -18,6 +18,12 @@ collections:
           - label: Text
             name: text
             widget: markdown
+          - label: Background
+            name: bg
+            widget: color
+          - label: Background image
+            name: bg_img
+            widget: image
       - file: site/_data/videos.yml
         label: Videos
         name: videos
