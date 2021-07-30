@@ -62,6 +62,15 @@ window.addEventListener('resize', function() {
 })
 
 function openContent() {
+
+  var s = (window.innerHeight*2) * 2;
+
+  if(!this.dataset.id) {
+    gsap.to(window, {duration: 1, scrollTo: {y:s, autoKill:true}, ease: "power2.inOut"});
+    return;
+  }
+
+
   document.body.classList.add('open-content');
   var el = document.getElementById(this.dataset.id);
 

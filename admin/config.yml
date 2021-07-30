@@ -19,6 +19,7 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
   - name: settings
     label: Settings
+    create: true
     files:
       - file: site/_data/navigation.yml
         label: Navigation

@@ -54,6 +54,11 @@ body {
   cursor: pointer;
 }
 
+.zoomer span:hover {
+  color: white;
+  mix-blend-mode: difference;
+}
+
 .zoomer * {
   will-change: transform;
 }
