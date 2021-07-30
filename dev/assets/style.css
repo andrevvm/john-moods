@@ -34,6 +34,10 @@ a {
   transition: transform 0.25s ease;
 }
 
+a small {
+  text-decoration: none;
+}
+
 nav a:hover {
   transform: scaleY(2);
 }

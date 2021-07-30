@@ -17,7 +17,7 @@ function init() {
   var s = (window.innerHeight*2) * 1;
   window.scrollTo(0,s);
 
-  setTimeout(animate, 100);
+  setTimeout(animate, 1000);
 
   for(var i=0; i<zoomers.length; i++) {
     zoomers[i].style.zIndex = zoomers.length - i;
@@ -46,6 +46,8 @@ function animate() {
       zoomers[i].style.opacity = 1;
       zoomers[i].style.pointerEvents = 'auto';
     }
+
+    //gsap.to(zoomers[i], {duration: 0.5, scale: zoomer.toFixed(4), ease: "power2.inOut"});
     zoomers[i].style.transform = 'translateZ(0px) scale3d(' + zoomer.toFixed(4) + ',' + zoomer.toFixed(4) + ','+ zoomer.toFixed(4) +' )';
 
   }
@@ -125,12 +127,15 @@ function response(data) {
     var dateOptions = {month:'long', day: '2-digit', year: 'numeric'}
     var dateString = new Date(date).toLocaleDateString(undefined, dateOptions)
 
-    var html =  dateString;
-    html +=     '<br/>'
-    html +=     events[i].venue.displayName
-    html +=     ', '
+    var html =  '<a href="'+events[i].uri+'" target="_blank">';
+    if(events[i].venue.displayName != 'Unknown venue') {
+      html +=     events[i].venue.displayName
+      html +=     ', '
+    }
+    
     html +=     events[i].location.city
-    html +=     '<br/><a href="'+events[i].uri+'" target="_blank">Get tickets</a>'
+    html +=     '<br/><small>' + dateString + '</small>'
+    html +=     '</a>'
 
     var tourItem = document.createElement('p')
     tourItem.innerHTML = html

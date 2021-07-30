@@ -8,6 +8,10 @@ html {
   font-size: 1vw;
 }
 
+a {
+  color:  currentColor;
+}
+
 body {
   height: 100vh;
   width: 100%;
@@ -96,7 +100,7 @@ body.open-content {
   
   -webkit-backface-visibility: hidden;
   font-size: 2rem;
-  line-height: 1.2em;
+  line-height: 1.3em;
   display: flex;
   flex-direction: column;
 
@@ -109,15 +113,16 @@ body.open-content {
 }
 
 .content iframe {
-  margin:  10vh auto;
-  width:  80vw;
-  height: 45vw;
+  display: block;
+  margin:  5vh auto 5vh;
+  width:  70vw;
+  height: 39.375vw;
 }
 
 .content p {
   width: 80vw;
   margin:  auto;
-  font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .open-content .content.open {
@@ -134,7 +139,7 @@ body.open-content {
 }
 
 #tour-dates p {
-  margin:  1em;
+  margin:  1.5em;
 }
 
 @media (max-width: 760px) {
