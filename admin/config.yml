@@ -21,6 +21,13 @@ collections:
     label: Settings
     create: true
     files:
+      - file: site/_data/about.yml
+        label: About
+        name: about
+        fields:
+          - label: Text
+            name: text
+            widget: wysiwyg
       - file: site/_data/navigation.yml
         label: Navigation
         name: navigation
