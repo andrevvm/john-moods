@@ -9,7 +9,7 @@ nav_items:
   - label: Videos
     path: videos
     id: videos
-    bg: "#59b7ff"
+    bg: "#b0e6be"
     text: "#ffd1c7"
   - label: About
     path: about
