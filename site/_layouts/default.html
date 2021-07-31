@@ -41,11 +41,13 @@
 
     <div class="content tour-dates" id="Tour" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: '/site/', '' }})">
 
+      <h1>Tour</h1>
+
       <div id="tour-dates">
         <p>No upcoming tour dates</p>
       </div>
     </div>
-    <div class="content" id="Videos" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: 'site/', '' }})">
+    <div class="content" id="Videos" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: '/site/', '' }})">
 
       <div class="videos">
 
@@ -53,7 +55,7 @@
 
       </div>
     </div>
-    <div class="content" id="About" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: 'site/', '' }})">
+    <div class="content" id="About" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: '/site/', '' }})">
 
       {{ site.data.about.text | markdownify }}
     </div>

@@ -138,13 +138,18 @@ function response(data) {
     var dateOptions = {month:'long', day: '2-digit', year: 'numeric'}
     var dateString = new Date(date).toLocaleDateString(undefined, dateOptions)
 
-    var html =  '<a href="'+events[i].uri+'" target="_blank">';
+    var html =  '<a href="'+events[i].uri+'" target="_blank"><span>';
     if(events[i].venue.displayName != 'Unknown venue') {
       html +=     events[i].venue.displayName
-      html +=     ', '
+      html +=     '<br/>'
+    } else {
+      html +=     events[i].displayName
+      html +=     '<br/>'
     }
+
+    console.log(events[i])
     
-    html +=     events[i].location.city
+    html +=     '</span><small>' + events[i].location.city + '</small>'
     html +=     '<br/><small>' + dateString + '</small>'
     html +=     '</a>'
 

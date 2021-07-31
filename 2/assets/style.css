@@ -26,6 +26,10 @@ body {
   background: black;
 }
 
+p {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 body.open-content {
   overflow: hidden;
 }
@@ -115,28 +119,33 @@ body.open-content {
 
 .back {
   position: fixed;
-  top: 30px;
-  left: 30px;
-  width:  40px;
+  top: 2.5rem;
+  left: 2.5rem;
+  width:  3rem;
   height: auto;
   cursor: pointer;
   z-index: 100;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.15s ease;
+}
+
+.back:hover {
+  transform:  rotate(-10deg);
 }
 
 .content iframe {
   display: block;
-  margin:  5vh auto 5vh;
-  width:  70vw;
-  height: 39.375vw;
+  margin:  10vh auto 10vh;
+  width:  50vw;
+  height: 28.125vw;
+  min-width: 300px;
+  min-height:  168.75px;
 }
 
 .content p {
   width: 80vw;
   margin:  auto;
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 .open-content .content.open {
@@ -155,15 +164,28 @@ body.open-content {
 
 #tour-dates {
   margin: auto;
-  padding:  10vh 0;
+  padding:  0 0 10vh;
 }
 
 #tour-dates p {
   margin:  1.5em;
 }
 
+#tour-dates a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+#tour-dates small {
+  font-size:  0.75em;
+}
+
+#tour-dates a:hover span {
+  text-decoration: underline;
+}
+
 @media (max-width: 760px) {
   html {
-    font-size:  1.75vw;
+    font-size:  2.5vw;
   }
 }
