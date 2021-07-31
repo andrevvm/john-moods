@@ -36,12 +36,17 @@
       <div id="scroller">
       <span></span>
     </div>
-    <div class="content tour-dates" id="Tour">
+
+    <img src="assets/back.svg" class="back" />
+
+    <div class="content tour-dates" id="Tour" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: 'site/', '' }})">
+
       <div id="tour-dates">
         <p>No upcoming tour dates</p>
       </div>
     </div>
-    <div class="content" id="Videos">
+    <div class="content" id="Videos" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: 'site/', '' }})">
+
       <div class="videos">
 
         {{ site.data.videos.embeds }}
@@ -49,6 +54,7 @@
       </div>
     </div>
     <div class="content" id="About" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: 'site/', '' }})">
+
       {{ site.data.about.text | markdownify }}
     </div>
     <script src="assets/script.js"></script>
