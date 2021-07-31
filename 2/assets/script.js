@@ -85,14 +85,11 @@ function openContent(e) {
     return;
   }
 
-
-
   document.body.classList.add('open-content');
   var el = document.getElementById(this.dataset.id);
 
   el.classList.add('open');
   el.addEventListener('click', closeContent);
-
 
 }
 
