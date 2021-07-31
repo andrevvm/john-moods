@@ -89,7 +89,6 @@ function openContent(e) {
   var el = document.getElementById(this.dataset.id);
 
   el.classList.add('open');
-  el.addEventListener('click', closeContent);
 
 }
 
