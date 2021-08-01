@@ -8,6 +8,9 @@ var back = document.querySelector('.back');
 var animate_bool = true;
 var resizeTimer = null;
 
+var h = window.innerHeight;
+var w = window.innerWidth;
+
 init();
 
 function setScrollerHeight() {
@@ -38,7 +41,7 @@ function animate() {
 
   var scrollY = window.scrollY;
 
-  var scrollDiff = (scrollY + window.innerHeight*2) / (window.innerHeight*2);
+  var scrollDiff = (scrollY + h*2) / (h*2);
 
   for(var i=0; i<zoomers.length; i++) {
 
@@ -58,10 +61,10 @@ function animate() {
   }
 
   if(scrollDiff > zoomers.length - 1.02)
-    window.scrollTo(0, (window.innerHeight*2))
+    window.scrollTo(0, (h*2))
 
   if(scrollDiff <= 1.98)
-    window.scrollTo(0, scroller.offsetHeight - window.innerHeight*2.08)
+    window.scrollTo(0, scroller.offsetHeight - h*2.08)
 
 }
 
