@@ -67,7 +67,7 @@ function animate() {
 
 window.addEventListener('resize', function() {
 
-  setScrollerHeight();
+  // setScrollerHeight();
 
 })
 
