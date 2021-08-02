@@ -15,7 +15,7 @@ nav_items:
     path: about
     id: about
     bg: "#937db5"
-    text: "#64c6ff"
+    text: "#f5b2a9"
   - label: Contact
     id: contact
     text: "#f6d68d"
