@@ -34,6 +34,10 @@ h1 {
   margin: 0.75em 0;
 }
 
+h1,h2,h3,h4,h6 {
+  font-weight: normal;
+}
+
 body.open-content {
   overflow: hidden;
 }
