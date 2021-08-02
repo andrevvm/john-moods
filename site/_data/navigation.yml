@@ -1,5 +1,5 @@
-intro_bg: "#1770de"
-intro_text: "#fdffd4"
+intro_bg: "#ffe0e0"
+intro_text: "#467945"
 nav_items:
   - label: Tour
     path: tour
