@@ -20,7 +20,11 @@
 
       {% for item in site.data.navigation.nav_items %}
         <div class="zoomer" data-id="{{ item.label }}" style="background: {{ item.bg }}">
-          <span style="color: {{ item.text }}">{{ item.label }}</span>
+          {% if item.image %}
+            <img src="{{ item.image | replace: '/site/', '' }}" />
+          {% else %}
+            <span style="color: {{ item.text }}">{{ item.label }}</span>
+          {% endif %}
         </div>
       {% endfor %}
 
