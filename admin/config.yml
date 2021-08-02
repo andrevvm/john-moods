@@ -31,6 +31,13 @@ collections:
           - label: Embeds
             name: embeds
             widget: markdown
+      - file: site/_data/contact.yml
+        label: Contact
+        name: contact
+        fields:
+          - label: Text
+            name: text
+            widget: markdown
       - file: site/_data/navigation.yml
         label: Navigation
         name: navigation

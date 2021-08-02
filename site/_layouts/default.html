@@ -27,7 +27,7 @@
 
       </span>
     </div>
-    
+
     <div class="zoomers">
 
       <div class="zoomer">
@@ -82,6 +82,13 @@
       <h1>About</h1>
 
       {{ site.data.about.text | markdownify }}
+    </div>
+
+    <div class="content" id="Contact" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: '/site/', '' }})">
+
+      <h1>Contact</h1>
+
+      {{ site.data.contact.text | markdownify }}
     </div>
     <script src="assets/script.js"></script>
   </body>
