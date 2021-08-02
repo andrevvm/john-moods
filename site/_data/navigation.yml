@@ -1,7 +1,6 @@
-intro_bg: "#59b7ff"
-intro_text: "#ffffdf"
+intro_bg: "#1770de"
+intro_text: "#ffffff"
 nav_items:
-  - image: /site/images/uploads/moods4_1.gif
   - label: Tour
     path: tour
     id: tour
