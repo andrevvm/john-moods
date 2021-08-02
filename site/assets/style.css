@@ -205,6 +205,10 @@ body.open-content {
   margin:  auto;
 }
 
+.content-wrapper {
+  margin: auto;
+}
+
 .open-content .content.open {
   transform:  translateZ(0px) scale(1);
   opacity: 1;
