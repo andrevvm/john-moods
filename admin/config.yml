@@ -45,8 +45,8 @@ collections:
             name: nav_items
             widget: list
             fields:
-              - {label: Label, name: label, widget: string}
-              - {label: Path, name: id, hint: "ID for page to open when clicked", widget: string}
-              - {label: Image, name: image, widget: image}
-              - { label: 'Background', name: 'bg', widget: color }
-              - { label: 'Text', name: 'text', widget: color }
+              - {label: Label, name: label, widget: string, required: false}
+              - {label: Path, name: id, hint: "ID for page to open when clicked", widget: string, required: false}
+              - {label: Image, name: image, widget: image, required: false}
+              - { label: 'Background', name: 'bg', widget: color, required: false }
+              - { label: 'Text', name: 'text', widget: color, required: false }
