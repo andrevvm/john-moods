@@ -61,7 +61,6 @@ body.open-content {
   left: 0;
   height:  100vh;
   width: 100vw;
-  background: blue;
   text-align: center;
   display: flex;
   -webkit-backface-visibility: hidden;
@@ -82,14 +81,6 @@ body.open-content {
 
 .zoomer span {
   margin:  auto;
-}
-
-.zoomer:nth-child(2) {
-  background: red;
-}
-
-.zoomer:nth-child(3) {
-  background: green;
 }
 
 #scroller {

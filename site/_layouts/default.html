@@ -20,19 +20,15 @@
 
       {% for item in site.data.navigation.nav_items %}
         <div class="zoomer" data-id="{{ item.label }}">
-          {% if item.image %}
-            <img src="{{ item.image | replace: '/site/', '' }}" />
-          {% else %}
-            <span style="color: {{ item.text }}">{{ item.label }}</span>
-          {% endif %}
+          <span style="color: {{ item.text }}">{{ item.label }}</span>
         </div>
       {% endfor %}
 
-      <div class="zoomer}">
+      <div class="zoomer" style="background: {{ site.data.navigation.intro_bg }}">
         <span style="color: {{ site.data.navigation.intro_text }}">John Moods</span>
       </div>
 
-      <div class="zoomer">
+      <div class="zoomer" style="background: {{ site.data.navigation.intro_bg }}">
         <span style="color: {{ site.data.navigation.intro_text }}">John Moods</span>
       </div>
 
