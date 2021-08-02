@@ -5,7 +5,7 @@ nav_items:
     path: tour
     id: tour
     bg: "#1770de"
-    text: "#1a954f"
+    text: "#25bf68"
   - label: Videos
     path: videos
     id: videos
