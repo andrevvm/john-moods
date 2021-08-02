@@ -1,5 +1,5 @@
 intro_bg: "#ffe0e0"
-intro_text: "#252524"
+intro_text: "#e84343"
 nav_items:
   - label: Tour
     path: tour
@@ -18,4 +18,4 @@ nav_items:
     text: "#f5b2a9"
   - label: Contact
     id: contact
-    text: "#f6d68d"
+    text: "#ec563d"
