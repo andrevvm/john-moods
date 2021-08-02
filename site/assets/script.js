@@ -2,6 +2,7 @@ var zoomers_container = document.querySelector('.zoomers');
 var zoomers = document.querySelectorAll('.zoomer');
 var scroller = document.getElementById('scroller');
 var tourDates = document.getElementById('tour-dates');
+var loader = document.querySelector('.loading');
 
 var back = document.querySelector('.back');
 
@@ -11,19 +12,24 @@ var resizeTimer = null;
 var h = window.innerHeight;
 var w = window.innerWidth;
 
-init();
+setTimeout(init, 1200);
+
+loader.addEventListener('click', init);
 
 function setScrollerHeight() {
   scroller.style.height = (zoomers.length-1) * (window.innerHeight * 2) + 'px';
 }
 
 function init() {
+
+  document.body.classList.add('loaded');
+
   setScrollerHeight();
 
   var s = (window.innerHeight*2) * 1;
   window.scrollTo(0,s);
 
-  setTimeout(animate, 1000);
+  animate();
 
   for(var i=0; i<zoomers.length; i++) {
     zoomers[i].style.zIndex = zoomers.length - i;
@@ -74,6 +80,11 @@ window.addEventListener('resize', function() {
 
 })
 
+function scrollIn() {
+  var s = (window.innerHeight*2) * 2;
+  gsap.to(window, {duration: 1, scrollTo: {y:s, autoKill:true}, ease: "power2.inOut"});
+}
+
 function openContent(e) {
 
   var origin_x = (e.clientX / window.innerWidth) * 100;
@@ -81,10 +92,8 @@ function openContent(e) {
 
   zoomers_container.style.transformOrigin = origin_x + '% ' + origin_y + '%';
 
-  var s = (window.innerHeight*2) * 2;
-
   if(!this.dataset.id) {
-    gsap.to(window, {duration: 1, scrollTo: {y:s, autoKill:true}, ease: "power2.inOut"});
+    scrollIn();
     return;
   }
 

@@ -71,6 +71,8 @@ body.open-content {
   cursor: pointer;
 }
 
+
+
 .zoomer span:hover {
   color: white;
 }
@@ -81,6 +83,61 @@ body.open-content {
 
 .zoomer span {
   margin:  auto;
+}
+
+.zoomer svg, .loading svg {
+  height: 3.1rem;
+  width: auto;
+  margin-top: 0.4em;
+}
+
+.zoomer svg {
+  margin:  auto;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  display: flex;
+  z-index: 200;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  font-size: 42px;
+  cursor: pointer;
+  transition:  opacity 0.5s ease;
+}
+
+.loading span {
+  margin: auto;
+  cursor: pointer;
+}
+
+.loaded .loading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes eyes {
+  0% {
+    transform:  translateX(0%);
+  }
+  25% {
+    transform:  translateX(0.1rem);
+  }
+  75% {
+    transform:  translateX(-0.2rem);
+  }
+  100% {
+    transform:  translateX(0%);
+  }
+}
+
+.eye {
+  animation:  eyes 1s ease;
 }
 
 #scroller {
@@ -97,6 +154,7 @@ body.open-content {
   transition:  opacity 0.5s ease;
   background:  black;
   opacity: 0;
+  padding-bottom:  7rem;
 
   text-align: center;
   
