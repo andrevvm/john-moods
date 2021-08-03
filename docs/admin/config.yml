@@ -4,14 +4,14 @@ backend:
   branch: live
   site_domain: stoic-kalam-384ed4.netlify.com
 
-media_folder: "images/uploads"
+media_folder: "docs/images/uploads"
 
 collections:
   - name: settings
     label: Content
     create: false
     files:
-      - file: _data/about.yml
+      - file: docs/_data/about.yml
         label: About
         name: about
         fields:
@@ -24,21 +24,21 @@ collections:
           - label: Background image
             name: bg_img
             widget: image
-      - file: _data/videos.yml
+      - file: docs/_data/videos.yml
         label: Videos
         name: videos
         fields:
           - label: Embeds
             name: embeds
             widget: markdown
-      - file: _data/contact.yml
+      - file: docs/_data/contact.yml
         label: Contact
         name: contact
         fields:
           - label: Text
             name: text
             widget: markdown
-      - file: _data/navigation.yml
+      - file: docs/_data/navigation.yml
         label: Navigation
         name: navigation
         fields:
