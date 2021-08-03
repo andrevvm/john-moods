@@ -1,21 +1,21 @@
 intro_bg: "#ffe0e0"
-intro_text: "#f6d68e"
+intro_text: "#3f69ff"
 nav_items:
   - label: Tour
     path: tour
     id: tour
     bg: "#1770de"
-    text: "#dd736f"
+    text: "#e08837"
   - label: Videos
     path: videos
     id: videos
     bg: "#b0e6be"
-    text: "#197af1"
+    text: "#ffd4d4"
   - label: About
     path: about
     id: about
     bg: "#937db5"
-    text: "#63a669"
+    text: "#583baa"
   - label: Contact
     id: contact
-    text: "#ea6136"
+    text: "#79cd78"
