@@ -31,7 +31,7 @@ collections:
           - label: Embeds
             name: embeds
             widget: markdown
-      - file: site/_data/music.yml
+      - file: docs/_data/music.yml
         label: Music
         name: music
         fields:
