@@ -5,12 +5,12 @@ nav_items:
     path: tour
     id: tour
     bg: "#1770de"
-    text: "#e08837"
+    text: "#ff9c96"
   - label: Videos
     path: videos
     id: videos
     bg: "#b0e6be"
-    text: "#a6cbad"
+    text: "#42ab4c"
   - label: Music
     id: music
     text: "#efbd3d"
