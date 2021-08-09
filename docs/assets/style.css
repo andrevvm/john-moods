@@ -212,6 +212,14 @@ body.open-content {
   min-height:  168.75px;
 }
 
+.content img {
+  display: block;
+  margin:  15vh auto 15vh;
+  width:  50vw;
+  height: auto;
+  min-width: 300px;
+}
+
 .content p {
   width: 80vw;
   margin:  auto;
