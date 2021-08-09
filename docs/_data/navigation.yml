@@ -11,6 +11,9 @@ nav_items:
     id: videos
     bg: "#b0e6be"
     text: "#ffd4d4"
+  - label: Music
+    id: music
+    text: "#efbd3d"
   - label: About
     path: about
     id: about
