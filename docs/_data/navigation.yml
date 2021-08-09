@@ -10,7 +10,7 @@ nav_items:
     path: videos
     id: videos
     bg: "#b0e6be"
-    text: "#ffd4d4"
+    text: "#a6cbad"
   - label: Music
     id: music
     text: "#efbd3d"
