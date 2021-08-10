@@ -244,6 +244,16 @@ nav ul {
 
 #Johnny.content img {
   margin:  auto;
+  animation: hue 10s linear infinite;
+}
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter:  hue-rotate(360deg);
+  }
 }
 
 .content p {
