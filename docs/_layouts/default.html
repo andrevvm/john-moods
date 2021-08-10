@@ -31,11 +31,11 @@
 
     <div class="zoomers">
 
-      <div class="zoomer">
+      <div class="zoomer" data-id="Johnny">
         <span style="color: {{ site.data.navigation.intro_text }}">John Moods</span>
       </div>
 
-      <div class="zoomer">
+      <div class="zoomer" data-id="Johnny">
         <span style="color: {{ site.data.navigation.intro_text }}">John Moods</span>
       </div>
 
@@ -45,11 +45,11 @@
         </div>
       {% endfor %}
 
-      <div class="zoomer">
+      <div class="zoomer" data-id="Johnny">
         <span style="color: {{ site.data.navigation.intro_text }}">John Moods</span>
       </div>
 
-      <div class="zoomer" style="background: {{ site.data.navigation.nav_items[1].text }}">
+      <div class="zoomer" style="background: {{ site.data.navigation.nav_items[1].text }}" data-id="Johnny"> 
         <span style="color: {{ site.data.navigation.nav_items[0].text }}">{{ site.data.navigation.nav_items[0].label }}</span>
       </div>
 
@@ -59,6 +59,22 @@
     </div>
 
     <img src="assets/back.svg" class="back" />
+
+    <nav>
+      <ul>
+        {% for item in site.data.navigation.nav_items %}
+          <li data-id="{{ item.label }}">
+            {{ item.label }}
+          </div>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="content" id="Johnny" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: '/site/', '' }})">
+
+      <img src="assets/johnny.gif" />
+
+    </div>
 
     <div class="content tour-dates" id="Tour" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: '/site/', '' }})">
 

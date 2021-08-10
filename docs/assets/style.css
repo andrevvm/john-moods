@@ -199,6 +199,26 @@ body.open-content {
   transition: opacity 0.5s ease, transform 0.15s ease;
 }
 
+nav {
+  position: fixed;
+  top:  7rem;
+  left:  2.5rem;
+  color: white;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+
+  display: none;
+}
+
+nav ul {
+  margin:  0;
+  padding:  0;
+  list-style: none;
+  font-size:  1.5rem;
+}
+
 .back:hover {
   transform:  rotate(-10deg);
 }
@@ -222,8 +242,12 @@ body.open-content {
   max-height: 75vh;
 }
 
+#Johnny.content img {
+  margin:  auto;
+}
+
 .content p {
-  width: 80vw;
+  width: 75vw;
   margin:  auto;
 }
 
@@ -240,7 +264,8 @@ body.open-content {
   z-index: 95;
 }
 
-.open-content .back {
+.open-content .back,
+.open-content nav {
   opacity: 1;
   pointer-events: auto;
 }
@@ -279,5 +304,9 @@ body.open-content {
 @media (max-width: 760px) {
   html {
     font-size:  2.5vw;
+  }
+
+  .content p {
+    width:  90vw;
   }
 }
