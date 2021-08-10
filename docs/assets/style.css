@@ -214,7 +214,7 @@ body.open-content {
 
 .content img {
   display: block;
-  margin:  15vh auto 15vh;
+  margin:  15vh auto 0;
   width:  50vw;
   height: auto;
   min-width: 300px;
