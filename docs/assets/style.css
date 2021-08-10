@@ -271,6 +271,11 @@ body.open-content {
   font-family: "Polsku", Helvetica, Arial, sans-serif;
 }
 
+#impressum,
+#impressum ~ * {
+  font-size:  0.75em;
+}
+
 @media (max-width: 760px) {
   html {
     font-size:  2.5vw;
