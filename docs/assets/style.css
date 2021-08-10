@@ -219,7 +219,7 @@ body.open-content {
   min-width: 300px;
   height: auto;
   object-fit: contain;
-  max-height: 80vh;
+  max-height: 75vh;
 }
 
 .content p {
