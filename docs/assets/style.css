@@ -64,6 +64,7 @@ body.open-content {
   z-index: 100;
   transition:  transform 1s ease;
   transform:  none;
+  animation: hue 10s linear infinite;
 }
 
 .open-content .zoomers {
