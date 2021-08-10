@@ -216,8 +216,10 @@ body.open-content {
   display: block;
   margin:  15vh auto 0;
   width:  50vw;
-  height: auto;
   min-width: 300px;
+  height: auto;
+  object-fit: contain;
+  max-height: 80vh;
 }
 
 .content p {
