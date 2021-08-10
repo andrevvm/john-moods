@@ -187,6 +187,26 @@ body.open-content {
   overflow-y:  auto;
 }
 
+.content .sib-form-container {
+  display: none;
+}
+
+.content #sib-container {
+  background:  none;
+}
+
+.content .sib-form-block {
+  text-align: center;
+}
+
+.content input {
+  max-width:  300px;
+  font-size:  1.5rem;
+  font-family: Helvetica, Arial, sans-serif;
+  padding:  0.5em;
+  text-align: center;
+}
+
 .back {
   position: fixed;
   top: 2.5rem;

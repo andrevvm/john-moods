@@ -49,9 +49,6 @@ collections:
         label: Navigation
         name: navigation
         fields:
-          - label: Intro background
-            name: intro_bg
-            widget: color
           - label: Intro text
             name: intro_text
             widget: color
@@ -61,6 +58,4 @@ collections:
             fields:
               - {label: Label, name: label, widget: string, required: false}
               - {label: Path, name: id, hint: "ID for page to open when clicked", widget: string, required: false}
-              - {label: Image, name: image, widget: image, required: false}
-              - { label: 'Background', name: 'bg', widget: color, required: false }
               - { label: 'Text', name: 'text', widget: color, required: false }
