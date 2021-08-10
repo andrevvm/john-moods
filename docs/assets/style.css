@@ -203,7 +203,7 @@ body.open-content {
   transform:  rotate(-10deg);
 }
 
-.content iframe {
+.content iframe[title="YouTube video player"] {
   display: block;
   margin:  15vh auto 15vh;
   width:  50vw;
