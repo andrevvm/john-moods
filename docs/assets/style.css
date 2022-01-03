@@ -50,7 +50,8 @@ hr {
   padding:  0;
 }
 
-body.open-content {
+body.open-content,
+body.reset  {
   overflow: hidden;
 }
 
@@ -70,6 +71,10 @@ body.open-content {
 .open-content .zoomers {
   transform:  scale(0) rotateZ(360deg);
   transform-origin: 60% 20%;
+}
+
+.reset .zoomers {
+  transform:  translate3d(0, 0, 0);
 }
 
 .zoomer {

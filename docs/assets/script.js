@@ -29,7 +29,9 @@ function init() {
   var s = (window.innerHeight*2) * 1;
   window.scrollTo(0,s);
 
-  animate();
+  window.addEventListener('scroll', function() {
+    window.requestAnimationFrame(animate);
+  })
 
   for(var i=0; i<zoomers.length; i++) {
     zoomers[i].style.zIndex = zoomers.length - i;
@@ -43,7 +45,7 @@ function init() {
 
 function animate() {
 
-  window.requestAnimationFrame(animate);
+  
 
   var scrollY = window.scrollY;
 
@@ -66,19 +68,27 @@ function animate() {
 
   }
 
-  if(scrollDiff > zoomers.length - 1.02)
-    window.scrollTo(0, (h*2))
+  if(scrollDiff > zoomers.length - 1.02) {
 
-  if(scrollDiff <= 1.98)
+    resetView();
+    window.scrollTo(0, (h*2))
+    
+  }
+
+  if(scrollDiff <= 1.98) {
     window.scrollTo(0, scroller.offsetHeight - h*2.08)
+  }
 
 }
 
-window.addEventListener('resize', function() {
+window.addEventListener('resize', resetView);
 
-  // setScrollerHeight();
-
-})
+function resetView() {
+  document.body.classList.add('reset');
+  setTimeout(function() {
+    document.body.classList.remove('reset');
+  }, 50);
+}
 
 function scrollIn() {
   var s = (window.innerHeight*2) * 2;
