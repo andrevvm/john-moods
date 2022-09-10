@@ -1,7 +1,7 @@
 content: >-
   <a href="https://www.songkick.com/artists/9417964" class="songkick-widget"
-  data-theme="light" data-track-button="on" data-detect-style="true"
-  data-background-color="transparent" data-locale="en">John Moods tour dates</a>
+  data-theme="light" data-detect-style="true"
+  data-background-color="transparent" data-locale="en"></a>
 
 
   <script src="//widget.songkick.com/9417964/widget.js"></script>
