@@ -5,6 +5,7 @@ backend:
   site_domain: stoic-kalam-384ed4.netlify.com
 
 media_folder: "docs/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: settings
