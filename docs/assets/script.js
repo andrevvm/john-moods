@@ -1,7 +1,6 @@
 var zoomers_container = document.querySelector('.zoomers');
 var zoomers = document.querySelectorAll('.zoomer');
 var scroller = document.getElementById('scroller');
-var tourDates = document.getElementById('tour-dates');
 var loader = document.querySelector('.loading');
 
 var back = document.querySelector('.back');
@@ -38,14 +37,10 @@ function init() {
     zoomers[i].addEventListener('click', openContent);
   }
 
-  initTour();
-
   back.addEventListener('click', closeContent);
 }
 
 function animate() {
-
-  
 
   var scrollY = window.scrollY;
 
@@ -124,60 +119,4 @@ function closeContent() {
 function contentClosed() {
   this.classList.remove('open');
   this.removeEventListener('transitionend', contentClosed);
-}
-
-function httpGetAsync(theUrl, callback)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.responseType = 'json';
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.response);
-    }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-    xmlHttp.send(null);
-}
-
-function initTour() {
-  httpGetAsync('https://api.songkick.com/api/3.0/artists/9417964-john-moods/calendar.json?apikey=kC1UkCrm3DDG7TfQ', response)
-}
-
-function response(data) {
-
-  if(!tourDates)
-    return false;
-  
-  var events = data.resultsPage.results.event;
-
-  if(events.length === 0)
-    return
-
-  tourDates.innerHTML = '';
-
-  for(var i=0;i<events.length;i++) {
-
-    var date = Date.parse(events[i].start.date)
-    var dateOptions = {month:'long', day: '2-digit', year: 'numeric'}
-    var dateString = new Date(date).toLocaleDateString(undefined, dateOptions)
-
-    var html =  '<a href="'+events[i].uri+'" target="_blank"><span>';
-    if(events[i].venue.displayName != 'Unknown venue') {
-      html +=     events[i].venue.displayName
-      html +=     '<br/>'
-    } else {
-      html +=     events[i].displayName
-      html +=     '<br/>'
-    }
-
-    console.log(events[i])
-    
-    html +=     '</span><small>' + events[i].location.city + '</small>'
-    html +=     '<br/><small>' + dateString + '</small>'
-    html +=     '</a>'
-
-    var tourItem = document.createElement('p')
-    tourItem.innerHTML = html
-    tourDates.append(tourItem)
-
-  }
 }
