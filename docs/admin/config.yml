@@ -35,8 +35,8 @@ collections:
         label: Tour
         name: tour
         fields:
-          - label: Embeds
-            name: embeds
+          - label: Content
+            name: content
             widget: markdown
       - file: docs/_data/music.yml
         label: Music

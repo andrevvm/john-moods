@@ -82,7 +82,7 @@
       <h1>Tour</h1>
 
       <div id="tour-dates">
-        <p>No upcoming tour dates</p>
+        {{ site.data.tour.content | markdownify }}
       </div>
     </div>
     <div class="content" id="Music" style="background: {{ site.data.about.bg }}; background-image: url({{ site.data.about.bg_img | replace: '/site/', '' }})">
