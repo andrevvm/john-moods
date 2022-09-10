@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: andrevvm/john-moods
   branch: live
   site_domain: stoic-kalam-384ed4.netlify.com
