@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: andrevvm/john-moods
   branch: live
   site_domain: stoic-kalam-384ed4.netlify.com
@@ -27,6 +27,13 @@ collections:
       - file: docs/_data/videos.yml
         label: Videos
         name: videos
+        fields:
+          - label: Embeds
+            name: embeds
+            widget: markdown
+      - file: docs/_data/tour.yml
+        label: Tour
+        name: tour
         fields:
           - label: Embeds
             name: embeds
